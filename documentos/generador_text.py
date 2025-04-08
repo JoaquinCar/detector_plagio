@@ -3,19 +3,21 @@ import os
 
 # Función para generar un documento de texto con palabras simples
 def generar_documento(nombre_archivo, num_palabras=100):
-    palabras_simples = ["hola", "mundo", "python", "programar", "codigo", "algoritmo", "texto", "documento", "aprendizaje", "inteligente"]
+    palabras_simples = ["hola", "mundo", "python", "programar", "codigo", "algoritmo", "texto", "documento", "aprendizaje", "inteligente", "Machine Learning", "redes", "neuronales", "datos", "análisis", "ciencia", "informática", "tecnología", "computadora", "software", "hardware", "programación", "desarrollo", "sistema", "aplicación", "función", "variable", "bucle", "condicional", "lista", "diccionario", "conjunto", "tupla"]
     texto = " ".join(random.choices(palabras_simples, k=num_palabras))
 
     with open(nombre_archivo, 'w') as archivo:
         archivo.write(texto)
 
-num_documentos = 20  # Número de documentos a generar
+num_documentos = 40  # Número de documentos a generar
 
-# Crear una carpeta para almacenar los documentos generados
-directorio_documentos = 'detector_plagio\documentos\documentos_generados'
+# Ruta de la carpeta donde se guardarán los documentos
+directorio_documentos = 'documentos/documentos_generados'
 
+# Crear la carpeta si no existe
 if not os.path.exists(directorio_documentos):
     os.makedirs(directorio_documentos)
+    print(f"Carpeta creada: {directorio_documentos}")
 
 # Generar los documentos solicitados
 for i in range(num_documentos):
